@@ -1,0 +1,41 @@
+.main.about {
+	.main__about-right {
+		padding-left: 0px;
+		ul {
+			padding-left: 40px;
+			padding-bottom: 20px;
+		}
+		li {
+			font-size: $font_xs;
+			color: rgb(43, 43, 43);
+			text-transform: none;
+			list-style: disc;
+			font-weight: 500;
+		}
+		p {
+			font-size: $font_sm;
+		}
+		span {
+			font-weight: 600;
+		}
+		img {
+			bottom: 0;
+			opacity: 0.6;
+		}
+	}
+	.main__about-left {
+    li {
+      font-size: $font_xs;
+    }
+	}
+}
+.about__bg-banner {
+	height: 300px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.inner {
+	text-align: center;
+}

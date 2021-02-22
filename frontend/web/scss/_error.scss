@@ -1,0 +1,41 @@
+.section__error {
+	padding: 150px 0;
+	text-align: center;
+	h1 {
+		font-size: 12rem;
+		font-weight: 700;
+		color: #e10f21;
+		letter-spacing: 10px;
+		margin-bottom: 40px;
+	}
+	h4 {
+		font-size: $font_md;
+		text-transform: uppercase;
+		font-weight: 500;
+		margin-bottom: 20px;
+	}
+	p {
+    font-size: $font_sm;
+    font-weight: 400;
+    margin-bottom: 30px;
+	}
+  a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    background: #c70909;
+    font-size: $font_xs;
+    font-weight: bold;
+    height: 40px;
+    line-height: 42px;
+    padding: 0 30px;
+    text-transform: uppercase;
+    margin-top: 35px;
+    border-radius: 3px;
+    max-width: 275px;
+    transition: all .3s;
+    &:hover {
+      background-color: #000;
+    }
+  }
+}

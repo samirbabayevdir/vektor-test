@@ -1,0 +1,38 @@
+.banner__wrapper.categories__page {
+	.banner.page {
+		height: 550px;
+		@media ($mb_lg) {
+			height: 750px;
+		}
+	}
+	.banner {
+		&:before {
+			background-color: #dddbd3;
+		}
+	}
+	// .banner__title-h1 {
+	// 	font-size: $font_2xl;
+	// 	margin-bottom: 100px;
+	// }
+}
+.links__inner {
+	flex-direction: column;
+	@media ($mb_md) {
+		flex-direction: row;
+	}
+	span {
+		padding: 0 5px;
+		display: none;
+		@media ($mb_md) {
+			display: block;
+		}
+	}
+	i {
+		font-size: 1rem;
+		padding-right: 2px;
+		color: rgb(61, 37, 7);
+		@media ($mb_md) {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+
+html {
+	overflow-x: hidden !important;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "Kanit", sans-serif;
+	font-weight: 300;
+	font-size: 1.7rem;
+}
+ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+$font1: "Montserrat", sans-serif;
+$font2: "Kanit", sans-serif;
+
+$font_xs: 1.5rem;
+$font_sm: 2rem;
+$font_md: 2.5rem;
+$font_lg: 3rem;
+$font_xl: 3.5rem;
+$font_2xl: 5rem;
+$font_3xl: 7rem;
+$font_4xl: 8rem;
+
+$mb_sm: 'min-width: 640px';
+$mb_md: 'min-width: 768px';
+$mb_lg: 'min-width: 1024px';
+$mb_xl: 'min-width: 1440px';
+$mb_2xl: 'min-width: 1715px';
+
+.container__full {
+	margin: 0 auto;
+	padding: 0 10px;
+	@media ($mb_sm) {
+		padding: 0 35px;
+	}
+	@media ($mb_md) {
+		padding: 0 35px;
+	}
+	@media ($mb_lg) {
+		padding: 0 35px;
+
+	}
+	@media ($mb_xl) {
+		padding: 0 100px;
+	}
+}
