@@ -78,6 +78,21 @@ class Product extends \yii\db\ActiveRecord
         return $this->hasMany(ProductImg::className(), ['product_id' => 'id']);
     }
 
+
+    public function getProductI18ns()
+    {
+        return $this->hasMany(ProductI18n::className(), ['fk_ref' => 'id']);
+    }
+
+
+    public function getTranslation()
+    {
+        $lang = \Yii::$app->request->getPreferredLanguage();
+        $transtation = $this->hasOne(ProductI18n::classname(), ['fk_ref' => 'id'])->onCondition(['lang' => $lang])->one();
+
+        return @$transtation ?: $this;
+    }
+
     /**
      * {@inheritdoc}
      * @return \common\models\query\ProductQuery the active query used by this AR class.

@@ -15,8 +15,8 @@ class BaseController extends Controller
     $this->view->params['whatsapp'] = Contact::find()->all()[0]['whatsapp'];
     $this->view->params['number'] = Contact::find()->all()[0]['number'];
     $this->view->params['email'] = Contact::find()->all()[0]['email'];
-    $this->view->params['address'] = Contact::find()->all()[0]['address'];
-    $this->view->params['info'] = Contact::find()->all()[0]['info'];
+    $this->view->params['address'] = Contact::find()->all()[0]->translation['address'];
+    $this->view->params['info'] = Contact::find()->all()[0]->translation['info'];
     $this->view->params['linkedin'] = Contact::find()->all()[0]['linkedin'];
 
 

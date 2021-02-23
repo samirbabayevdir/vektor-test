@@ -38,7 +38,17 @@ $this->params['breadcrumbs'][] = $this->title;
             //'instagram',
             //'linkedin',
 
-            ['class' => 'common\grid\ActionColumn'],
+            [
+                'class' => 'common\grid\ActionColumn',
+                'buttons' => [
+
+                    'delete' => function ($url, $model, $key) {
+
+                        return '';
+                    },
+
+                ],
+            ],
         ],
     ]); ?>
 

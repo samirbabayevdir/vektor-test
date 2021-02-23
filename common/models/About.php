@@ -46,11 +46,11 @@ class About extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'description_one' => 'Birinci Sol Hissə',
-            'description_two' => 'İkinci Sağ Hissə',
-            'image' => 'Foto (kiçik)',
-            'image_banner' => 'Banner',
+            'id' => Yii::t('app', 'ID'),
+            'description_one' => Yii::t('app', 'Description One'),
+            'description_two' => Yii::t('app', 'Description Two'),
+            'image' => Yii::t('app', 'Image'),
+            'image_banner' => Yii::t('app', 'Image Banner'),
         ];
     }
 
@@ -61,6 +61,20 @@ class About extends \yii\db\ActiveRecord
     public static function find()
     {
         return new \common\models\query\AboutQuery(get_called_class());
+    }
+
+    public function getAboutI18ns()
+    {
+        return $this->hasMany(AboutI18n::className(), ['fk_ref' => 'id']);
+    }
+
+
+    public function getTranslation()
+    {
+        $lang = \Yii::$app->request->getPreferredLanguage();
+        $transtation = $this->hasOne(AboutI18n::classname(), ['fk_ref' => 'id'])->onCondition(['lang' => $lang])->one();
+
+        return @$transtation ?: $this;
     }
 
     public function save($runValidation = true, $attributeNames = null)

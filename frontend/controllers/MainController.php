@@ -29,10 +29,11 @@ class MainController extends BaseController
   public function actionIndex()
   {
     $headCategs = Category::find()->where(['parent_id' => 0])->all();
-    $model = About::find()->all();
+    $about = About::find()->all();
+    // $model = Ca::find()->all();
 
 
-    return $this->render('index', ['headCategs' => $headCategs, 'model' => $model]);
+    return $this->render('index', ['headCategs' => $headCategs, 'about' => $about]);
   }
 
   public function actionMain()
@@ -155,10 +156,10 @@ class MainController extends BaseController
   {
     $categ = Category::findOne(['id' => $id]);
     if ($id == 0) {
-      return Html::a('<i class="fas fa-arrow-down"></i>Kateqoriyalar ', \yii\helpers\Url::to(['/main/main']),) . '<span> / </span>';
+      return Html::a('<i class="fas fa-arrow-down"></i>' . Yii::t('samba', 'Categories'), \yii\helpers\Url::to(['/main/main']),) . '<span> / </span>';
     }
     return
-      Html::a('<i class="fas fa-arrow-down"></i>' . $categ['name'], '/categories/' . $id, ['style' => 'order: ' . $id . ';']) . '<span style="order: ' . $id . '" > / </span>' .
+      Html::a('<i class="fas fa-arrow-down"></i>' . $categ->translation['name'], '/categories/' . $id, ['style' => 'order: ' . $id . ';']) . '<span style="order: ' . $id . '" > / </span>' .
       $this->getLinks($categ['parent_id']);
   }
   protected function getTopBanner($id)

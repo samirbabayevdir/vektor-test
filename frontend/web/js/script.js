@@ -20,6 +20,19 @@ $(document).ready(function () {
       $('.header').removeClass("transition");
     }
   });
+
+  //lang
+  // const theLanguage = $('html').attr('lang');
+  // if (theLanguage == 'ru-RU') {
+  //   // $('body').css('font-family', '"Montserrat", sans-serif;');
+  //   // $(".banner__title-h1").css('font-family', '"Montserrat", sans-serif;');
+  //   $("body").on({
+  //     mouseenter: function () {
+  //       $(this).css({ "font-family": "Montserrat, sans-serif"});
+  //     }
+  //   });
+  //   console.log('s');
+  // }
 });
 
 mybutton = document.getElementById("myBtn");

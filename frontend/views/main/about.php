@@ -8,7 +8,7 @@ $this->title = 'Haqqımızda';
       <div class="row">
         <div class="banner__inner">
           <div class="banner__title">VEKTOR UNİFORMA</div>
-          <h1 class="banner__title-h1">Haqqımızda</h1>
+          <h1 class="banner__title-h1"><?= \Yii::t('samba', 'About'); ?></h1>
         </div>
       </div>
     </div>
@@ -20,33 +20,15 @@ $this->title = 'Haqqımızda';
     <div class="row">
       <div class="col-lg-6">
         <div class="main__about-right">
-          <h2>Məhsullar Haqqında</h2>
-          <?= $about[0]['description_one'] ?>
+          <h2><?= \Yii::t('samba', 'ABOUT PRODUCTS'); ?></h2>
+          <?= $about[0]->translation['description_one'] ?>
           <img src="<?= $about[0]->getImageUrl() ?>" alt="VEKTOR UNIFORMA">
         </div>
       </div>
       <div class="col-lg-6">
         <div class="main__about-left">
           <h2>VEKTOR UNİFORMA</h2>
-          <?= $about[0]['description_two'] ?>
-          <!-- <p>Bizim kompaniya müxtəlif cür iş geyimlərinin(uniformalarının) topdan
-            satışı ilə məşğuldur:</p>
-          <ul>
-            <li>korporativ geyimlər</li>
-            <li>iş geyimləri</li>
-            <li>iş əlcəkləri</li>
-            <li>iş ayaqqabıları</li>
-            <li>fərdi qoruyucu vasitələr</li>
-            <li>təhlükəsizlik avadanlıqları</li>
-            <li>və s.</li>
-          </ul>
-          <p>
-            Bizdə geniş çeşidli
-            məhsullar vardır ki, istənilən tədbir, təşkilat və müəssəni
-            funksianallaşdıra bilər. <br /> <br /> Bizim müştərilərimiz arasında həm hüquqi həm
-            də fiziki şəxslər mövcuddur. Hər bir müştəriyə onun tələb və
-            istəklərinə uyğun olaraq endirimlər təklif etməyə hazırıq. Müsabiqəli,
-            daimi alıcı və sezon endirimləri mövcuddur.</p> -->
+          <?= $about[0]->translation['description_two'] ?>
         </div>
       </div>
     </div>

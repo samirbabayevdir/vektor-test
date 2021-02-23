@@ -8,7 +8,7 @@ $this->title = $headCateg['name'];
       <div class="row">
         <div class="banner__inner">
           <div class="banner__title">VEKTOR UNİFORMA</div>
-          <h1 class="banner__title-h1"><?= $headCateg['name'] ?></h1>
+          <h1 class="banner__title-h1"><?= $headCateg->translation['name'] ?></h1>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@ $this->title = $headCateg['name'];
     </section>
     <div class="row categories__header">
       <div class="col-lg-6">
-        <h2>Məhsullar</h2>
+        <h2><?= Yii::t('samba', 'Products') ?></h2>
       </div>
     </div>
     <div class="categories__list">

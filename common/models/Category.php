@@ -20,6 +20,7 @@ use Yii;
  *
  * @property CategoryI18n[] $categoryI18ns
  * @property Product[] $products
+ * @property Category[] $category
  */
 class Category extends \yii\db\ActiveRecord
 {
@@ -86,6 +87,10 @@ class Category extends \yii\db\ActiveRecord
         return $this->hasMany(Product::className(), ['category_id' => 'id']);
     }
 
+    public function getCategory()
+    {
+        return $this->hasOne(Category::className(), ['id' => 'parent_id']);
+    }
     /**
      * {@inheritdoc}
      * @return \common\models\query\CategoryQuery the active query used by this AR class.
@@ -93,6 +98,20 @@ class Category extends \yii\db\ActiveRecord
     public static function find()
     {
         return new \common\models\query\CategoryQuery(get_called_class());
+    }
+
+    public function getCategoryI18ns()
+    {
+        return $this->hasMany(CategoryI18n::className(), ['fk_ref' => 'id']);
+    }
+
+
+    public function getTranslation()
+    {
+        $lang = \Yii::$app->request->getPreferredLanguage();
+        $transtation = $this->hasOne(CategoryI18n::classname(), ['fk_ref' => 'id'])->onCondition(['lang' => $lang])->one();
+
+        return @$transtation ?: $this;
     }
 
     public function save($runValidation = true, $attributeNames = null)

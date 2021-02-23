@@ -8,7 +8,7 @@ $this->title = 'Kateqoriyalar';
       <div class="row">
         <div class="banner__inner">
           <div class="banner__title">VEKTOR UNİFORMA</div>
-          <h1 class="banner__title-h1">Kateqoriyalar</h1>
+          <h1 class="banner__title-h1"><?= \Yii::t('samba', 'Categories') ?></h1>
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@ $this->title = 'Kateqoriyalar';
     </section>
     <div class="row categories__header">
       <div class="col-lg-6">
-        <h2>KATEQORİYALAR</h2>
+        <h2><?= \Yii::t('samba', 'Categories') ?></h2>
       </div>
     </div>
     <div class="categories__list">
@@ -39,7 +39,7 @@ $this->title = 'Kateqoriyalar';
             <div class="categories__box">
               <a href="<?= \yii\helpers\Url::to(['main/categories', 'id' => $categ['id']]) ?>" style="background-image: url(<?= $categ->getImageUrl() ?>);">
                 <div class="categories__box-bg"></div>
-                <div class="btn__vk"><?= $categ['name'] ?></div>
+                <div class="btn__vk"><?= $categ->translation['name'] ?></div>
               </a>
             </div>
           </div>

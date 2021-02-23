@@ -56,6 +56,20 @@ class Contact extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getContactI18ns()
+    {
+        return $this->hasMany(ProductI18n::className(), ['fk_ref' => 'id']);
+    }
+
+
+    public function getTranslation()
+    {
+        $lang = \Yii::$app->request->getPreferredLanguage();
+        $transtation = $this->hasOne(ContactI18n::classname(), ['fk_ref' => 'id'])->onCondition(['lang' => $lang])->one();
+
+        return @$transtation ?: $this;
+    }
+
     /**
      * {@inheritdoc}
      * @return \common\models\query\ContactQuery the active query used by this AR class.

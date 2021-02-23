@@ -112,7 +112,7 @@
 	z-index: 2;
 	li {
 		list-style: none;
-		margin: 0 0 0 15px;
+		margin: 0 4px 0 9px;
 	}
 }
 .header__link {
@@ -179,10 +179,10 @@
 		color: #fff;
 		font-size: $font_xs;
 		@media ($mb_lg) {
-			font-size: $font_sm;
+			font-size: 1.8rem;
 		}
 		@media ($mb_2xl) {
-			font-size: $font_md;
+			font-size: $font_sm;
 		}
 		font-weight: 400;
 		text-decoration: none;
@@ -327,6 +327,11 @@
 		a {
 			text-decoration: none;
 			color: #000000;
+			font-size: $font_xs;
+			font-weight: 500;
+			@media (max-width: 350px) {
+				font-size: 1.4rem;
+			}
 		}
 		i {
 			color: #0d0d0d;
@@ -365,5 +370,11 @@
 		outline: none;
 		cursor: pointer;
 		border: 0;
+		transition: all 0.3s;
+	}
+	option {
+		cursor: pointer;
+		background-color: #e10f21;
+		transition: all 0.3s;
 	}
 }

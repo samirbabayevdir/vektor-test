@@ -35,6 +35,7 @@ $linkedin = $this->params['linkedin'];
   <meta charset="<?= Yii::$app->charset ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google" value="notranslate">
   <?php $this->registerCsrfMetaTags() ?>
   <title>Vektor Uniforma | <?= Html::encode($this->title) ?></title>
   <?php $this->head() ?>
@@ -61,7 +62,7 @@ $linkedin = $this->params['linkedin'];
           <?= $linkedin ? '<li><a target="_blank" href="' . $linkedin . '" class="linkedin"><i class="fab fa-linkedin"></i></a></li>' : '' ?>
           <li>
             <?= Html::beginForm(['/main/language'], 'post', ['class' => 'language__form']) ?>
-            <?= Html::dropDownList('language', Yii::$app->language, ['az' => 'Azərbaycan', 'ru-RU' => 'Русский', 'en-US' => 'English'], ['onchange' => 'this.form.submit()']) ?>
+            <?= Html::dropDownList('language', Yii::$app->language, ['az' => 'AZ', 'ru-RU' => 'RU', 'en-US' => 'EN'], ['onchange' => 'this.form.submit()']) ?>
             <?= Html::endForm() ?>
           </li>
         </ul>
@@ -87,17 +88,28 @@ $linkedin = $this->params['linkedin'];
             <div class="row categories__header">
               <h2></h2>
             </div>
-            <li><a href="<?= Url::to(['/main/about']) ?>">Haqqımızda</a></li>
-            <li><a href="<?= Url::to(['/main/contact']) ?>">Bizimlə Əlaqə</a></li>
+            <li><a href="<?= Url::to(['/main/about']) ?>"><?= Yii::t('samba', 'About'); ?></a></li>
+            <li><a href="<?= Url::to(['/main/contact']) ?>"><?= Yii::t('samba', 'Contact Us'); ?></a></li>
             <div class="row categories__header mt-4">
               <h2></h2>
             </div>
-            <div class="socials">
-              <?= $facebook ? '<li><a target="_blank" href="' . $facebook . '" class="facebook"><i class="fab fa-facebook-f"></i></a></li>' : '' ?>
-              <?= $instagram ? '<li><a target="_blank" href="' . $instagram . '" class="instagram"><i class="fab fa-instagram"></i></a></li>' : '' ?>
-              <?= $linkedin ? '<li><a target="_blank" href="' . $linkedin . '" class="linkedin"><i class="fab fa-linkedin"></i></a></li>' : '' ?>
-              <li><?= $whatsapp ? '<a target="_blank" href="' . $whatsapp . '" class="whatsapp pt-1"><i class="fab fa-whatsapp"></i></a>' : '' ?><a class="number"><?= $number ?></a></li>
+            <div class="socials pt-2">
+              <?= $facebook ? '<li class="d-flex align-items-center" ><a class="d-flex align-items-center"  target="_blank" href="' . $facebook . '" class="facebook"><i class="fab fa-facebook-f"></i></a></li>' : '' ?>
+              <?= $instagram ? '<li class="d-flex align-items-center" ><a class="d-flex align-items-center"  target="_blank" href="' . $instagram . '" class="instagram"><i class="fab fa-instagram"></i></a></li>' : '' ?>
+              <?= $linkedin ? '<li class="d-flex align-items-center" ><a class="d-flex align-items-center"  target="_blank" href="' . $linkedin . '" class="linkedin"><i class="fab fa-linkedin"></i></a></li>' : '' ?>
+              <li class="d-flex align-items-center">
+                <?= $whatsapp ? '<a target="_blank" href="' . $whatsapp . '" class="whatsapp pt-1"><i class="fab fa-whatsapp"></i></a>' : '' ?>
+                <a class="number px-2"><?= $number ?></a>
+              </li>
             </div>
+            <div class="row categories__header mt-4">
+              <h2></h2>
+            </div>
+            <li>
+              <?= Html::beginForm(['/main/language'], 'post', ['class' => 'language__form']) ?>
+              <?= Html::dropDownList('language', Yii::$app->language, ['az' => 'AZ', 'ru-RU' => 'RU', 'en-US' => 'EN'], ['onchange' => 'this.form.submit()']) ?>
+              <?= Html::endForm() ?>
+            </li>
           </ul>
           <ul class="dropdown__list">
             <?= \common\widgets\MenuWidget::widget(['tpl' => 'menu_laptop']) ?>
@@ -124,7 +136,7 @@ $linkedin = $this->params['linkedin'];
             <div class="inner">
               <p class="number"> <?= $whatsapp ? '<a target="_blank" href="' . $whatsapp . '" class="whatsapp pt-2"><i class="fab fa-whatsapp"></i></a>' : '' ?>
                 <?= $number ?></p>
-              <a href="<?= Url::to(['/main/contact']) ?>" class="btn__vk">BİZİMLƏ ƏLAQƏ</a>
+              <a href="<?= Url::to(['/main/contact']) ?>" class="btn__vk"><?= Yii::t('samba', 'Contact Us'); ?></a>
               <ul class="socials">
                 <?= $facebook ? '<li><a target="_blank" href="' . $facebook . '" class="facebook"><i class="fab fa-facebook-f"></i></a></li>' : '' ?>
                 <?= $instagram ? '<li><a target="_blank" href="' . $instagram . '" class="instagram"><i class="fab fa-instagram"></i></a></li>' : '' ?>
@@ -147,7 +159,7 @@ $linkedin = $this->params['linkedin'];
                 document.write(year);
               }
               getYear();
-            </script> | VEKTOR UNİFORMA | Bütün Hüquqlar Qorunur | Hazırlanıb <a href="#">SAM-BA</a>
+            </script> <?= Yii::t('samba', '| VEKTOR UNİFORMA | All Rights Reserved | Developed by') ?> <a href="#">SAM-BA</a>
           </p>
         </div>
       </div>

@@ -28,13 +28,23 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            // 'description_one:ntext',
+            // 'id',
+            'description_one:ntext',
             // 'description_two:ntext',
             // 'image',
             // 'image_banner',
 
-            ['class' => 'common\grid\ActionColumn'],
+            [
+                'class' => 'common\grid\ActionColumn',
+                'buttons' => [
+
+                    'delete' => function ($url, $model, $key) {
+
+                        return '';
+                    },
+
+                ],
+            ],
         ],
     ]); ?>
 

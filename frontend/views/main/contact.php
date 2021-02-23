@@ -13,7 +13,7 @@ use yii\widgets\ActiveForm;
       <div class="row">
         <div class="banner__inner">
           <div class="banner__title">VEKTOR UNİFORMA</div>
-          <h1 class="banner__title-h1">Bizimlə Əlaqə</h1>
+          <h1 class="banner__title-h1"><?= \Yii::t('samba', 'Contact Us'); ?></h1>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
     <div class="row">
       <div class="col-lg-6">
         <div class="main__about-left">
-          <h2>Bİzə Yazın!</h2>
+          <h2><?= \Yii::t('samba', 'Write to us!'); ?></h2>
           <div class="cotnact__form">
             <?php $form = ActiveForm::begin(); ?>
             <div class="two">
@@ -45,10 +45,10 @@ use yii\widgets\ActiveForm;
               </div>
             </div>
             <div class="input__inner">
-              <?= $form->field($response, 'message')->textarea(['maxlength' => true, 'cols' => 30, 'rows' => 10, 'placeholder' => 'Təkliflər, Məhsullar, Sifarişlər, Əlavə Məlumat...']) ?>
+              <?= $form->field($response, 'message')->textarea(['maxlength' => true, 'cols' => 30, 'rows' => 10, 'placeholder' => \Yii::t('samba', 'Offers, Products, Orders, Additional Information ...')]) ?>
             </div>
             <div class="button__inner">
-              <?= Html::submitButton('Göndər', ['class' => 'btn__vk']) ?>
+              <?= Html::submitButton(\Yii::t('samba', 'Send'), ['class' => 'btn__vk']) ?>
             </div>
             <?php ActiveForm::end(); ?>
           </div>
@@ -56,11 +56,11 @@ use yii\widgets\ActiveForm;
       </div>
       <div class="col-lg-6">
         <div class="main__about-right">
-          <h2>Əlaqə Məlumatı</h2>
+          <h2><?= \Yii::t('samba', 'Contact Information'); ?></h2>
           <ul>
-            <li>Email: <?= $contact[0]['email'] ?></li>
-            <li>Telefon: <?= $contact[0]['number'] ?></li>
-            <li>Ünvan: <?= $contact[0]['address'] ?></li>
+            <li><span><?= \Yii::t('samba', 'Email'); ?></span>: <?= $contact[0]['email'] ?></li>
+            <li><span><?= \Yii::t('samba', 'Phone'); ?></span>: <?= $contact[0]['number'] ?></li>
+            <li><span><?= \Yii::t('samba', 'Address'); ?></span>: <?= $contact[0]->translation['address'] ?></li>
           </ul>
           <img src="<?= $about[0]->getImageUrl() ?>" alt="VEKTOR UNIFORMA">
         </div>

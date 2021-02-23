@@ -61,11 +61,11 @@ class Response extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'created_at' => 'Göndərilmə Zamanı',
-            'name' => 'Ad',
-            'surname' => 'Soyad',
-            'email' => 'Email',
-            'phone' => 'Tel',
-            'message' => 'Mesaj',
+            'name' => \Yii::t('samba', 'Name'),
+            'surname' => \Yii::t('samba', 'Surname'),
+            'email' => \Yii::t('samba', 'Email'),
+            'phone' => \Yii::t('samba', 'Phone'),
+            'message' => \Yii::t('samba', 'Message'),
         ];
     }
 
