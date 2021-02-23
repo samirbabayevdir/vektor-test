@@ -43,7 +43,7 @@ class ProductI18nController extends Controller
             $model->fk_ref = $id;
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+                return $this->redirect(['/product/update', 'id' => $id]);
             }
 
             return $this->render('create', [
@@ -55,7 +55,7 @@ class ProductI18nController extends Controller
 
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['/product/update', 'id' => $id]);
         }
 
         return $this->render('update', [

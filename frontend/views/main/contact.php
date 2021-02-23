@@ -99,7 +99,7 @@ use yii\widgets\ActiveForm;
         icon: myIcon
       }).addTo(map);
       // add popup to the marker
-      marker.bindPopup("<b>VEKTOR UNIFORMA.</b><br/><?= $contact[0]['address'] ?>").openPopup();
+      marker.bindPopup("<b>VEKTOR UNIFORMA.</b><br/><?= $contact[0]->translation['address'] ?>").openPopup();
     </script>
   </div>
 </section>

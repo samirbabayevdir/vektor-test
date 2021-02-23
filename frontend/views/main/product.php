@@ -46,7 +46,7 @@ $this->title = $product['name'];
       </div>
       <div class="col-lg-6">
         <div class="product__info">
-          <?= $product['description'] ?>
+          <?= $product->translation['description'] ?>
         </div>
       </div>
 
