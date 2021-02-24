@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\base\BackController;
 use Yii;
 use common\models\AboutI18n;
 use backend\models\search\AboutI18nSearch;
@@ -13,22 +14,22 @@ use yii\filters\VerbFilter;
 /**
  * AboutI18nController implements the CRUD actions for AboutI18n model.
  */
-class AboutI18nController extends Controller
+class AboutI18nController extends BackController
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+    // public function behaviors()
+    // {
+    //     return [
+    //         'verbs' => [
+    //             'class' => VerbFilter::className(),
+    //             'actions' => [
+    //                 'delete' => ['POST'],
+    //             ],
+    //         ],
+    //     ];
+    // }
 
     /**
      * Lists all AboutI18n models.

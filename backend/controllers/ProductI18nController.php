@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\base\BackController;
 use Yii;
 use common\models\ProductI18n;
 use backend\models\search\ProductI18nSearch;
@@ -12,22 +13,22 @@ use yii\filters\VerbFilter;
 /**
  * ProductI18nController implements the CRUD actions for ProductI18n model.
  */
-class ProductI18nController extends Controller
+class ProductI18nController extends BackController
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+    // public function behaviors()
+    // {
+    //     return [
+    //         'verbs' => [
+    //             'class' => VerbFilter::className(),
+    //             'actions' => [
+    //                 'delete' => ['POST'],
+    //             ],
+    //         ],
+    //     ];
+    // }
 
     public function actionLang()
     {

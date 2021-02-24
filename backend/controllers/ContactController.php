@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\base\BackController;
 use Yii;
 use common\models\Contact;
 use backend\models\search\ContactSearch;
@@ -12,22 +13,22 @@ use yii\filters\VerbFilter;
 /**
  * ContactController implements the CRUD actions for Contact model.
  */
-class ContactController extends Controller
+class ContactController extends BackController
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+    // public function behaviors()
+    // {
+    //     return [
+    //         'verbs' => [
+    //             'class' => VerbFilter::className(),
+    //             'actions' => [
+    //                 'delete' => ['POST'],
+    //             ],
+    //         ],
+    //     ];
+    // }
 
     /**
      * Lists all Contact models.

@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\base\BackController;
 use Yii;
 use common\models\Response;
 use backend\models\search\ResponseSearch;
@@ -12,22 +13,22 @@ use yii\filters\VerbFilter;
 /**
  * ResponseController implements the CRUD actions for Response model.
  */
-class ResponseController extends Controller
+class ResponseController extends BackController
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+    // public function behaviors()
+    // {
+    //     return [
+    //         'verbs' => [
+    //             'class' => VerbFilter::className(),
+    //             'actions' => [
+    //                 'delete' => ['POST'],
+    //             ],
+    //         ],
+    //     ];
+    // }
 
     /**
      * Lists all Response models.

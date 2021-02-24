@@ -32,7 +32,6 @@ class MainController extends BaseController
     $about = About::find()->all();
     // $model = Ca::find()->all();
 
-
     return $this->render('index', ['headCategs' => $headCategs, 'about' => $about]);
   }
 
