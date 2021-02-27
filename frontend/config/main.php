@@ -6,6 +6,10 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
+use \yii\web\Request;
+
+$baseUrl = str_replace('/frontend/web', '', (new Request)->getBaseUrl());
+
 return [
     'language' => 'az',
     'id' => 'app-frontend',
@@ -21,6 +25,8 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
+            'baseUrl' => $baseUrl . "",
+
         ],
         'user' => [
             'identityClass' => 'common\models\User',
