@@ -22,7 +22,7 @@ return [
         ],
         'request' => [
             'csrfParam' => '_csrf-backend',
-            'baseUrl' =>  "vektor-test/admin",
+            'baseUrl' =>  "/admin",
         ],
         'user' => [
             'identityClass' => 'common\models\User',
