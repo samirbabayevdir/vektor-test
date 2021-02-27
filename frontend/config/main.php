@@ -12,7 +12,7 @@ $baseUrl = str_replace('/frontend/web', '', (new Request)->getBaseUrl());
 
 return [
     'language' => 'az',
-    'homeUrl' => '/',
+    // 'homeUrl' => '/',
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => [
@@ -67,6 +67,8 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '' => 'main/index',
+                '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
                 'categories/<id:\d+>' => 'main/categories',
                 'categories/' => 'main/main',
                 'product/<id:\d+>/<headCateg:\d+>' => 'main/product',
