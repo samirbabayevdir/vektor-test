@@ -16,9 +16,13 @@ return [
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
+        'assetManager' => [
+            'basePath' => '@webroot/assets',
+            'baseUrl' => '@web/assets'
+        ],
         'request' => [
             'csrfParam' => '_csrf-backend',
-            'baseUrl' => $baseUrl . "/admin",
+            'baseUrl' =>  "/admin",
         ],
         'user' => [
             'identityClass' => 'common\models\User',
