@@ -3,7 +3,7 @@ $this->title = 'Kateqoriyalar';
 ?>
 <section class="banner__wrapper categories__page">
   <div class="banner page banner__home">
-    <div class="banner__bg" style="background-image: url(/images/banner__home.jpg);"></div>
+    <div class="banner__bg" style="background-image: url(images/banner__home.jpg);"></div>
     <div class="container">
       <div class="row">
         <div class="banner__inner">
