@@ -8,7 +8,7 @@ $this->title = 'Əsas';
     <div class="container">
       <div class="row">
         <div class="banner__inner">
-          <div class="banner__title">VEKTOR UNİFORMA</div>
+          <div class="banner__title">VEKTOR UNİFORMA </div>
           <h1 class="banner__title-h1"><?= \Yii::t('samba', 'SPECIAL WORK<br> CLOTHES & UNIFORMS STORE IN AZERBAIJAN') ?></h1>
           <a href="<?= \yii\helpers\Url::to(['/main/main']) ?>" class="btn__vk"><?= \Yii::t('samba', 'Categories') ?></a>
         </div>
