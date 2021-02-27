@@ -24,13 +24,13 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'defaultRoute' => '/main/index',
     'components' => [
-        'assetManager' => [
-            'basePath' => '@webroot/assets',
-            'baseUrl' => '@web/assets'
-        ],
+        // 'assetManager' => [
+        //     'basePath' => '@webroot/assets',
+        //     'baseUrl' => '@web/assets'
+        // ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
-            'baseUrl' => '',
+            // 'baseUrl' => '',
 
         ],
         'user' => [
