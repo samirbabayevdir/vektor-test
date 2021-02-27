@@ -4,7 +4,7 @@ $this->title = 'Əsas';
 
 <section class="banner__wrapper">
   <div class="banner banner__home">
-    <div class="banner__bg" style="background-image: url(/images/banner__home.jpg);"></div>
+    <div class="banner__bg" style="background-image: url(images/banner__home.jpg);"></div>
     <div class="container">
       <div class="row">
         <div class="banner__inner">
@@ -31,11 +31,11 @@ $this->title = 'Əsas';
         <div class="main__about-right">
           <h3><?= \Yii::t('samba', 'SPECIALITIES') ?></h3>
           <ul>
-            <li style="background-image: url(/images/clothesssew.svg)"><a><?= \Yii::t('samba', 'CORPORATE STYLE') ?></a></li>
-            <li style="background-image: url(/images/flex.svg)"><a><?= \Yii::t('samba', 'FLEX INJECTION OF LOGOS') ?></a></li>
-            <li style="background-image: url(/images/logosew.svg)"><a><?= \Yii::t('samba', 'STICKING LOGOS') ?></a></li>
+            <li style="background-image: url(images/clothesssew.svg)"><a><?= \Yii::t('samba', 'CORPORATE STYLE') ?></a></li>
+            <li style="background-image: url(images/flex.svg)"><a><?= \Yii::t('samba', 'FLEX INJECTION OF LOGOS') ?></a></li>
+            <li style="background-image: url(images/logosew.svg)"><a><?= \Yii::t('samba', 'STICKING LOGOS') ?></a></li>
           </ul>
-          <img src="/images/vektor-vektors.svg" alt="VEKTOR UNIFORMA">
+          <img src="images/vektor-vektors.svg" alt="VEKTOR UNIFORMA">
         </div>
       </div>
     </div>

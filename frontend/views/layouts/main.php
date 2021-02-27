@@ -73,7 +73,7 @@ $linkedin = $this->params['linkedin'];
     <div class="container__full">
       <div class="header__body">
         <a href="<?= Url::to(['/']) ?>" class="header__logo">
-          <img src="/images/Vektor-VEKTOR.svg" alt="Vektor Uniforma - Logo">
+          <?= Html::img('images/Vektor-VEKTOR.svg', ['alt' => 'Vektor Uniforma - Logo']) ?>
           <div class="header__logo-text">Unİforma</div>
         </a>
         <div class="header__burger">
@@ -128,7 +128,7 @@ $linkedin = $this->params['linkedin'];
         <div class="row justify-content-center ">
           <div class="col-lg-6 d-flex justify-content-around">
             <div class="inner">
-              <img src="/images/Vektor-VEKTOR.svg" alt="VEKTOR UNIFORMA LOGO">
+              <?= Html::img('images/Vektor-VEKTOR.svg', ['alt' => 'Vektor Uniforma - Logo']) ?>
               <?= $info ?>
             </div>
           </div>
