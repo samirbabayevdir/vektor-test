@@ -6,12 +6,10 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
-use \yii\web\Request;
-
-$baseUrl = str_replace('/backend/web', '', (new Request)->getBaseUrl());
 
 return [
     'id' => 'app-backend',
+    'homeUrl' => '/admin',
     'defaultRoute' => '/category/index',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
