@@ -676,8 +676,8 @@ ul, li {
 #myBtn {
   display: none;
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  bottom: 50px;
+  right: 15px;
   z-index: 9999;
   border: none;
   outline: none;
