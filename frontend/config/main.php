@@ -30,7 +30,7 @@ return [
         // ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
-            // 'baseUrl' => '',
+            'baseUrl' => '',
 
         ],
         'user' => [
@@ -73,6 +73,8 @@ return [
             'rules' => [
                 // '' => 'main/index',
                 // '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
+                '' => 'main/index',
+                '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
                 'categories/<id:\d+>' => 'main/categories',
                 'categories/' => 'main/main',
                 'product/<id:\d+>/<headCateg:\d+>' => 'main/product',

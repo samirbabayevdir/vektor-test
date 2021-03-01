@@ -22,7 +22,7 @@ return [
         // ],
         'request' => [
             'csrfParam' => '_csrf-backend',
-            // 'baseUrl' =>  "/admin",
+            'baseUrl' =>  "/admin",
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -53,7 +53,10 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [],
+            'rules' => [
+                '' => 'main/index',
+                '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
+            ],
         ],
 
     ],
