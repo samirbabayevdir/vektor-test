@@ -21,8 +21,10 @@ return [
         //     'baseUrl' => '@web/assets'
         // ],
         'request' => [
+            'class' => 'common\components\Request',
             'csrfParam' => '_csrf-backend',
-            'baseUrl' =>  "/admin",
+            'web' => '/backend/web',
+            'adminUrl' => '/admin',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
