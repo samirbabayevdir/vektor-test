@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 ?>
 <section class="banner__wrapper">
   <div class="banner page banner__home">
-    <div class="banner__bg" style="background-image: url(images/banniere.jpg);"></div>
+    <div class="banner__bg" style="background-image: url(/images/banniere.jpg);"></div>
     <div class="container">
       <div class="row">
         <div class="banner__inner">
