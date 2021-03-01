@@ -128,7 +128,7 @@ $linkedin = $this->params['linkedin'];
         <div class="row justify-content-center ">
           <div class="col-lg-6 d-flex justify-content-around">
             <div class="inner">
-              <?= Html::img('images/Vektor-VEKTOR.svg', ['alt' => 'Vektor Uniforma - Logo']) ?>
+              <?= Html::img('/images/Vektor-VEKTOR.svg', ['alt' => 'Vektor Uniforma - Logo']) ?>
               <?= $info ?>
             </div>
           </div>
@@ -159,7 +159,7 @@ $linkedin = $this->params['linkedin'];
                 document.write(year);
               }
               getYear();
-            </script> <?= Yii::t('samba', '| VEKTOR UNİFORMA | All Rights Reserved | Developed by') ?> <a href="#">SAM-BA</a>
+            </script> <?= Yii::t('samba', '| VEKTOR UNİFORMA | All Rights Reserved | Developed by') ?> <a href="https://www.behance.net/samirbabayevdir">SAM-BA</a>
           </p>
         </div>
       </div>
