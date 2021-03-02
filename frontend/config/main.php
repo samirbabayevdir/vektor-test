@@ -74,7 +74,7 @@ return [
             // 'suffix' => '/',
             'rules' => [
                 '' => 'main/index',
-                '<action:\w+>' => 'main/<action>',
+                '<action:\w+>' => '/main/<action>',
                 '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
                 'categories/<id:\d+>' => 'main/categories',
                 'categories/' => 'main/main',
