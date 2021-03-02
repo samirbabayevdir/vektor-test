@@ -73,9 +73,9 @@ return [
             'showScriptName' => false,
             // 'suffix' => '/',
             'rules' => [
-                '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
                 '' => 'main/index',
-                // '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
+                '<action:\w+>' => 'main/<action>',
+                '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
                 'categories/<id:\d+>' => 'main/categories',
                 'categories/' => 'main/main',
                 'product/<id:\d+>/<headCateg:\d+>' => 'main/product',
