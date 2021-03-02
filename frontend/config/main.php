@@ -31,6 +31,7 @@ return [
             'csrfParam' => '_csrf-frontend',
             // 'class' => 'common\components\Request',
             // 'web' => '/frontend/web',
+            'baseUrl' => '',
 
         ],
         'user' => [
