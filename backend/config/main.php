@@ -28,7 +28,7 @@ return [
             // 'class' => 'common\components\Request',
             // 'web' => '/backend/web',
             // 'adminUrl' => '/admin'
-            'baseUrl' => '/admin',
+            // 'baseUrl' => '/admin',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
