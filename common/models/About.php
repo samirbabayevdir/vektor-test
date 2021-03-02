@@ -46,11 +46,11 @@ class About extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'ID'),
-            'description_one' => Yii::t('app', 'Description One'),
-            'description_two' => Yii::t('app', 'Description Two'),
-            'image' => Yii::t('app', 'Image'),
-            'image_banner' => Yii::t('app', 'Image Banner'),
+            'id' => Yii::t('samba', 'ID'),
+            'description_one' => Yii::t('samba', 'Description One'),
+            'description_two' => Yii::t('samba', 'Description Two'),
+            'image' => Yii::t('samba', 'Image'),
+            'image_banner' => Yii::t('samba', 'Image Banner'),
         ];
     }
 

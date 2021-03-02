@@ -6,13 +6,12 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
-use \yii\web\Request;
+// use \yii\web\Request;
 
-$baseUrl = str_replace('/backend/web', '', (new Request)->getBaseUrl());
+// $baseUrl = str_replace('/backend/web', '', (new Request)->getBaseUrl());
 
 return [
     'id' => 'app-backend',
-    'homeUrl' => '/adminpanel',
     'defaultRoute' => '/category/index',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
@@ -25,9 +24,7 @@ return [
         // ],
         'request' => [
             'csrfParam' => '_csrf-backend',
-            'baseUrl' => $baseUrl . "/admin",
-            // 'baseUrl' =>  "/admin",
-            // 'baseUrl' => '/adminpanel',
+            // 'baseUrl' => "/admin",
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -60,7 +57,7 @@ return [
             'showScriptName' => false,
             // 'suffix' => '/',
             'rules' => [
-                '' => 'category/index',
+                // '' => 'category/index',
                 // '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
             ],
         ],

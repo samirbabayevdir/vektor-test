@@ -14,15 +14,15 @@ use common\widgets\Alert;
 
 AppAsset::register($this);
 
-$info = $this->params['info'];
-$number = $this->params['number'];
-$email = $this->params['email'];
-$address = $this->params['address'];
+$info = empty($this->params['info']) ? '' : $this->params['info'];
+$number = empty($this->params['number'])  ? '' : $this->params['number'];
+$email = empty($this->params['email']) ? '' : $this->params['email'];
+$address = empty($this->params['address'])  ? '' : $this->params['address'];
 
-$facebook = $this->params['facebook'];
-$instagram = $this->params['instagram'];
-$whatsapp = $this->params['whatsapp'];
-$linkedin = $this->params['linkedin'];
+$facebook = empty($this->params['facebook']) ? '' : $this->params['facebook'];
+$instagram = empty($this->params['instagram'])  ? '' : $this->params['instagram'];
+$whatsapp = empty($this->params['whatsapp']) ? '' : $this->params['whatsapp'];
+$linkedin = empty($this->params['linkedin'])  ? '' : $this->params['linkedin'];
 
 
 

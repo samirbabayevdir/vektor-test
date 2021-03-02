@@ -58,11 +58,11 @@ use yii\widgets\ActiveForm;
         <div class="main__about-right">
           <h2><?= \Yii::t('samba', 'Contact Information'); ?></h2>
           <ul>
-            <li><span><?= \Yii::t('samba', 'Email'); ?></span>: <?= $contact[0]['email'] ?></li>
-            <li><span><?= \Yii::t('samba', 'Phone'); ?></span>: <?= $contact[0]['number'] ?></li>
-            <li><span><?= \Yii::t('samba', 'Address'); ?></span>: <?= $contact[0]->translation['address'] ?></li>
+            <li><span><?= \Yii::t('samba', 'Email'); ?></span>: <?= empty($contact[0]['email']) ? '' : $contact[0]['email'] ?></li>
+            <li><span><?= \Yii::t('samba', 'Phone'); ?></span>: <?= empty($contact[0]['number']) ? '' : $contact[0]['number'] ?></li>
+            <li><span><?= \Yii::t('samba', 'Address'); ?></span>: <?= empty($contact[0]->translation['address']) ? '' : $contact[0]->translation['address'] ?></li>
           </ul>
-          <img src="<?= $about[0]->getImageUrl() ?>" alt="VEKTOR UNIFORMA">
+          <img src="<?= empty($about[0]) ? '' : $about[0]->getImageUrl() ?>" alt="VEKTOR UNIFORMA">
         </div>
       </div>
     </div>
@@ -99,7 +99,7 @@ use yii\widgets\ActiveForm;
         icon: myIcon
       }).addTo(map);
       // add popup to the marker
-      marker.bindPopup("<b>VEKTOR UNIFORMA.</b><br/><?= $contact[0]->translation['address'] ?>").openPopup();
+      marker.bindPopup("<b>VEKTOR UNIFORMA.</b><br/><?= empty($contact[0]->translation['address']) ? '' : $contact[0]->translation['address'] ?>").openPopup();
     </script>
   </div>
 </section>

@@ -23,7 +23,7 @@ $this->title = 'Əsas';
       <div class="col-lg-6">
         <div class="main__about-left">
           <h2><?= \Yii::t('samba', 'VEKTOR UNIFORMA, MORE THAN 15 YEARS IN CLOTHING') ?></h2>
-          <?= $about[0]->translation['description_two'] ?>
+          <?= empty($about[0]->translation['description_two']) ? '' :  $about[0]->translation['description_two'] ?>
           <h4><a href="<?= \yii\helpers\Url::to(['/main/about']) ?>"><?= \Yii::t('samba', 'MORE') ?></a></h4>
         </div>
       </div>

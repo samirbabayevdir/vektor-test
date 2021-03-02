@@ -3,7 +3,7 @@ $this->title = 'Haqqımızda';
 ?>
 <section class="banner__wrapper">
   <div class="banner page banner__home">
-    <div class="banner__bg" style="background-image: url(<?= $about[0]->getImage_bannerUrl() ?>);"></div>
+    <div class="banner__bg" style="background-image: url(<?= empty($about[0]) ? '' : $about[0]->getImage_bannerUrl() ?>);"></div>
     <div class="container">
       <div class="row">
         <div class="banner__inner">
@@ -21,14 +21,14 @@ $this->title = 'Haqqımızda';
       <div class="col-lg-6">
         <div class="main__about-right">
           <h2><?= \Yii::t('samba', 'ABOUT PRODUCTS'); ?></h2>
-          <?= $about[0]->translation['description_one'] ?>
-          <img src="<?= $about[0]->getImageUrl() ?>" alt="VEKTOR UNIFORMA">
+          <?= empty($about[0]->translation['description_one']) ? '' : $about[0]->translation['description_one'] ?>
+          <img src="<?= empty($about[0]) ? '' : $about[0]->getImageUrl() ?>" alt="VEKTOR UNIFORMA">
         </div>
       </div>
       <div class="col-lg-6">
         <div class="main__about-left">
           <h2>VEKTOR UNİFORMA</h2>
-          <?= $about[0]->translation['description_two'] ?>
+          <?= empty($about[0]->translation['description_two']) ? '' :  $about[0]->translation['description_two'] ?>
         </div>
       </div>
     </div>
