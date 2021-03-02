@@ -12,7 +12,7 @@ $baseUrl = str_replace('/backend/web', '', (new Request)->getBaseUrl());
 
 return [
     'id' => 'app-backend',
-    // 'homeUrl' => '/admin',
+    'homeUrl' => '/adminpanel',
     'defaultRoute' => '/category/index',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
@@ -27,6 +27,7 @@ return [
             'csrfParam' => '_csrf-backend',
             // 'baseUrl' => $baseUrl . "/admin",
             // 'baseUrl' =>  "/admin",
+            'baseUrl' => '/adminpanel',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -57,10 +58,10 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'suffix' => '/',
+            // 'suffix' => '/',
             'rules' => [
                 '' => 'category/index',
-                '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
+                // '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
             ],
         ],
 
