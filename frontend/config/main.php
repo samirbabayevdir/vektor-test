@@ -29,8 +29,8 @@ return [
         // ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
-            'baseUrl' =>  "",
-            // 'baseUrl' =>  "",
+            'class' => 'common\components\Request',
+            'web' => '/frontend/web',
 
         ],
         'user' => [

@@ -1,13 +1,18 @@
 <?php
+
 namespace common\components;
 
-class Request extends \yii\web\Request {
+
+class Request extends \yii\web\Request
+{
     public $web;
     public $adminUrl;
 
-    public function getBaseUrl(){
+    public function getBaseUrl()
+    {
         return str_replace($this->web, "", parent::getBaseUrl()) . $this->adminUrl;
     }
+
 
     /*
         If you don't have this function, the admin site will 404 if you leave off 
@@ -23,10 +28,11 @@ class Request extends \yii\web\Request {
 
         Using this function, both will work.
     */
-    public function resolvePathInfo(){
-        if($this->getUrl() === $this->adminUrl){
+    public function resolvePathInfo()
+    {
+        if ($this->getUrl() === $this->adminUrl) {
             return "";
-        }else{
+        } else {
             return parent::resolvePathInfo();
         }
     }
