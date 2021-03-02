@@ -25,9 +25,9 @@ return [
         // ],
         'request' => [
             'csrfParam' => '_csrf-backend',
-            // 'baseUrl' => $baseUrl . "/admin",
+            'baseUrl' => $baseUrl . "/admin",
             // 'baseUrl' =>  "/admin",
-            'baseUrl' => '/adminpanel',
+            // 'baseUrl' => '/adminpanel',
         ],
         'user' => [
             'identityClass' => 'common\models\User',

@@ -12,7 +12,7 @@ $baseUrl = str_replace('/frontend/web', '', (new Request)->getBaseUrl());
 
 return [
     'language' => 'az',
-    'homeUrl' => '/',
+    // 'homeUrl' => '/',
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => [
@@ -30,8 +30,8 @@ return [
         // ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
-            // 'baseUrl' =>  $baseUrl . "",
-            'baseUrl' =>  "",
+            'baseUrl' =>  $baseUrl . "",
+            // 'baseUrl' =>  "",
 
         ],
         'user' => [
