@@ -28,7 +28,7 @@ return [
             // 'class' => 'common\components\Request',
             // 'web' => '/backend/web',
             // 'adminUrl' => '/admin'
-            // 'baseUrl' => '/admin',
+            'baseUrl' => '/admin',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -61,7 +61,7 @@ return [
             'showScriptName' => false,
             // 'suffix' => '/',
             'rules' => [
-                '' => 'category/index',
+                // '' => 'category/index',
                 // '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
             ],
         ],
