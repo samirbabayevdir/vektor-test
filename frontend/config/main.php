@@ -71,10 +71,10 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            // 'suffix' => '/',
+            'suffix' => '/',
             'rules' => [
                 // '' => 'main/index',
-                // '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
                 '' => 'main/index',
                 // '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
                 'categories/<id:\d+>' => 'main/categories',
