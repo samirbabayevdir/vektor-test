@@ -31,7 +31,7 @@ return [
         'request' => [
             'csrfParam' => '_csrf-frontend',
             // 'baseUrl' =>  $baseUrl . "",
-            // 'baseUrl' =>  "",
+            'baseUrl' =>  "",
 
         ],
         'user' => [
