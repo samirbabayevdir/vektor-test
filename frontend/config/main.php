@@ -70,6 +70,7 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'suffix' => '/',
             'rules' => [
                 // '' => 'main/index',
                 // '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',

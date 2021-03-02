@@ -57,6 +57,7 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'suffix' => '/',
             'rules' => [
                 '' => 'category/index',
                 '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
