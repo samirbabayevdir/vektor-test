@@ -9,8 +9,8 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
-    'homeUrl' => '/admin',
-    'defaultRoute' => 'admin/category/index',
+    // 'homeUrl' => '/admin',
+    'defaultRoute' => '/category/index',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
@@ -22,7 +22,7 @@ return [
         // ],
         'request' => [
             'csrfParam' => '_csrf-backend',
-            'baseUrl' =>  "/admin",
+            // 'baseUrl' =>  "/admin",
         ],
         'user' => [
             'identityClass' => 'common\models\User',
