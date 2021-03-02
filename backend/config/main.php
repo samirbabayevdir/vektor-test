@@ -61,8 +61,7 @@ return [
             'showScriptName' => false,
             // 'suffix' => '/',
             'rules' => [
-                // '' => 'category/index',
-                // '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
+                '' => 'category/index',
                 '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
             ],
         ],
