@@ -22,7 +22,7 @@ class BackController extends Controller
             'allow' => true,
           ],
           [
-            'actions' => ['logout', 'index', 'update', 'view', 'create', 'lang', 'about-i-18n', 'multiple'],
+            'actions' => ['logout', 'index', 'update', 'view', 'create', 'lang', 'about-i-18n', 'multiple', 'delete'],
             'allow' => true,
             'roles' => ['@'],
           ],
