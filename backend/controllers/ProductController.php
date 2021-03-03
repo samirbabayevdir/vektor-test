@@ -14,6 +14,12 @@ use yii\helpers\ArrayHelper;
 use yii\web\UploadedFile;
 use yii\helpers\Url;
 
+use yii\imagine\Image;
+use Imagine\Image\Box;
+use Imagine\Image\Point;
+use Imagine\Gd;
+use Imagine\Image\BoxInterface;
+
 /**
  * ProductController implements the CRUD actions for Product model.
  */
@@ -52,6 +58,18 @@ class ProductController extends BackController
                     $model->image = time() . rand(100, 999) . '.' . $image->extension;
                     if ($model->save(false)) {
                         $image->saveAs($fullPath . $model->image);
+                        $imgPath = $fullPath . $model->image;
+
+                        $img = Image::getImagine()->open($imgPath);
+
+                        // $size = $img->getSize();
+                        $ratio = 1 / 1;
+
+                        $width = 200;
+                        $height = round($width / $ratio);
+
+                        $box = new Box($width, $height);
+                        $img->resize($box)->save($imgPath);
                     }
                 }
                 return $this->redirect(['index']);
@@ -59,6 +77,44 @@ class ProductController extends BackController
         }
 
         return $this->render('multiple', ['upload' => $upload, 'products' => ArrayHelper::map($products, 'id', 'name')]);
+    }
+
+    public function doResize($imageLocation, $imageDestination, array $options = null)
+    {
+        $newWidth = $newHeight = 0;
+        list($width, $height) = getimagesize($imageLocation);
+
+        if (isset($options['newWidth']) || isset($options['newHeight'])) {
+            if (isset($options['newWidth']) && isset($options['newHeight'])) {
+                $newWidth = $options['newWidth'];
+                $newHeight = $options['newHeight'];
+            } else if (isset($options['newWidth'])) {
+                $deviationPercentage = (($width - $options['newWidth']) / (0.01 * $width)) / 100;
+
+                $newWidth = $options['newWidth'];
+                $newHeight = $height - ($height * $deviationPercentage);
+            } else {
+                $deviationPercentage = (($height - $options['newHeight']) / (0.01 * $height)) / 100;
+
+                $newWidth = $width - ($width * $deviationPercentage);
+                $newHeight = $options['newHeight'];
+            }
+        } else {
+            // reduce image size up to 20% by default
+            $reduceRatio = isset($options['reduceRatio']) ? $options['reduceRatio'] : 20;
+
+            $newWidth = $width * ((100 - $reduceRatio) / 100);
+            $newHeight = $height * ((100 - $reduceRatio) / 100);
+        }
+
+        return Image::thumbnail(
+            $imageLocation,
+            (int) $newWidth,
+            (int) $newHeight
+        )->save(
+            $imageDestination,
+            ['quality' => isset($options['quality']) ? $options['quality'] : 100]
+        );
     }
 
     /**
