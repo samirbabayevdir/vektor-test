@@ -2,6 +2,8 @@
 
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
+use common\grid\ActionColumn;
+use yii\bootstrap4\LinkPager;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Product */
@@ -39,3 +41,5 @@ use yii\helpers\Html;
   </div>
   <?php ActiveForm::end(); ?>
 </div>
+
+<?= $this->render('/product-img/index', ['dataProvider' => $dataProvider, 'searchModel' => $searchModel]) ?>
