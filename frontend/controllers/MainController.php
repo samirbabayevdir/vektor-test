@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use common\models\About;
 use common\models\Category;
 use common\models\Contact;
+use common\models\MetaPages;
 use common\models\Product;
 use common\models\Response;
 use frontend\base\BaseController;
@@ -31,7 +32,9 @@ class MainController extends BaseController
     $headCategs = Category::find()->where(['parent_id' => 0])->all();
     $about = About::find()->all();
     // $model = Ca::find()->all();
+    $meta = MetaPages::find()->andWhere('name' == 'home')->one();
 
+    $this->setMeta($meta->title, $meta->description);
     return $this->render('index', ['headCategs' => $headCategs, 'about' => $about]);
   }
 
@@ -51,6 +54,7 @@ class MainController extends BaseController
       throw new \yii\web\HttpException(404, 'Belə Kateqoriya Yoxdur');
     }
 
+    $this->setMeta($headCateg->translation['name'], $headCateg->description);
     $childCategs = Category::find()->andWhere(['parent_id' => $id])->all();
     $bannerCateg = $this->getTopBanner($id);
     $links       = $this->getLinks($id);
@@ -95,7 +99,7 @@ class MainController extends BaseController
 
     $links       = $this->getLinks($headCateg['id']);
 
-
+    $this->setMeta($product->translation['name'], $product->description);
 
     return $this->render('product', [
       'product' => $product,

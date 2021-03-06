@@ -96,7 +96,17 @@ AppAsset::register($this);
           <i class="fa fa-phone"></i>
           <span>Əlaqə</span></a>
       </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider">
 
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="<?= \yii\helpers\Url::to(['/meta-pages/index']) ?>">
+          <i class="fa fa-pen"></i>
+          <span>Meta - Açarlar</span></a>
+      </li>
+
+      <!-- Divider -->
       <!-- Divider -->
       <hr class="sidebar-divider">
 
