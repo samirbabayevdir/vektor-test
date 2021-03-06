@@ -99,7 +99,7 @@ class MainController extends BaseController
 
     $links       = $this->getLinks($headCateg['id']);
 
-    $this->setMeta($product->translation['name'], $product->description);
+    $this->setMeta($product->name, $product->description);
 
     return $this->render('product', [
       'product' => $product,
