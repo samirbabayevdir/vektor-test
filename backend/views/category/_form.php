@@ -67,9 +67,6 @@ use yii\widgets\ActiveForm;
 
   <div class="row justify-content-center pt-4">
     <div class="col-8">
-      <?= $form->field($model, 'keywords')->textarea(['rows' => 6]) ?>
-    </div>
-    <div class="col-8">
       <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
     </div>
   </div>
