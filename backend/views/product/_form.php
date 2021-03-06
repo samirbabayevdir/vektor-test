@@ -48,7 +48,7 @@ use mihaildev\ckeditor\CKEditor;
         </div>
     </div>
     <div class="row">
-        <?php if (count($model->formimgsurl) > 1) : ?>
+        <?php if (count($model->formimgsurl) >= 1) : ?>
             <?php foreach ($model->formimgsurl as $urlid) : ?>
 
                 <div class="col-md-3 speacial__img">
