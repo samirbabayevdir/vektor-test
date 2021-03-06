@@ -129,9 +129,33 @@ class ProductController extends BackController
     public function actionCreate()
     {
         $model = new Product();
-        // $upload = new ProductImg();
+        $upload = new ProductImg();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $upload->image = UploadedFile::getInstances($model, 'images');
+            if ($upload->image) {
+                $fullPath = Yii::getAlias('@frontend/web/storage/products/');
+                if (!file_exists(Url::to($fullPath))) {
+                    mkdir(Url::to($fullPath), 0777, true);
+                }
+                foreach ($upload->image as $image) {
+                    $img_model = new ProductImg();
+                    $img_model->product_id = $model->id;
+                    $img_model->image = time() . rand(100, 999) . '.' . $image->extension;
+                    if ($img_model->save(false)) {
+                        $image->saveAs($fullPath . $img_model->image);
+                        $imgPath = $fullPath . $img_model->image;
+
+                        $img = Image::getImagine()->open($imgPath);
+                        $ratio = 1 / 1;
+                        $width = 200;
+                        $height = round($width / $ratio);
+                        $box = new Box($width, $height);
+                        $img->resize($box)->save($imgPath);
+                    }
+                }
+                // return $this->redirect(['multiple']);
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -152,7 +176,33 @@ class ProductController extends BackController
     {
         $model = $this->findModel($id);
 
+        $upload = new ProductImg();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $upload->image = UploadedFile::getInstances($model, 'images');
+            if ($upload->image) {
+                $fullPath = Yii::getAlias('@frontend/web/storage/products/');
+                if (!file_exists(Url::to($fullPath))) {
+                    mkdir(Url::to($fullPath), 0777, true);
+                }
+                foreach ($upload->image as $image) {
+                    $img_model = new ProductImg();
+                    $img_model->product_id = $model->id;
+                    $img_model->image = time() . rand(100, 999) . '.' . $image->extension;
+                    if ($img_model->save(false)) {
+                        $image->saveAs($fullPath . $img_model->image);
+                        $imgPath = $fullPath . $img_model->image;
+
+                        $img = Image::getImagine()->open($imgPath);
+                        $ratio = 1 / 1;
+                        $width = 200;
+                        $height = round($width / $ratio);
+                        $box = new Box($width, $height);
+                        $img->resize($box)->save($imgPath);
+                    }
+                }
+                // return $this->redirect(['multiple']);
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

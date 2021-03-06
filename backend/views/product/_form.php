@@ -28,12 +28,37 @@ use mihaildev\ckeditor\CKEditor;
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-4">
+            <?= $form->field($model, 'status')->checkbox(['value' => '1', 'checked' => true]) ?>
+        </div>
+        <div class="col-md-8">
+            <?= $form->field($model, 'images[]
+            ', [
+                'template' => '
+        <div class="custom-file">
+          {input}
+          {label}
+          {error}
+        </div>
+    ',
+                'labelOptions' => ['class' => 'custom-file-label'],
+                'inputOptions' => ['class' => 'custom-file-input'],
+            ])->fileInput(['multiple' => true]) ?>
+        </div>
+    </div>
+    <div class="row">
+        <?php if (count($model->formimgsurl) > 1) : ?>
+            <?php foreach ($model->formimgsurl as $urlid) : ?>
 
-    <?= $form->field($model, 'status')->checkbox(['value' => '1', 'checked' => true]) ?>
+                <div class="col-md-3 speacial__img">
+                    <img src="<?= $urlid[0] ?>" alt="">
+                    <?= Html::a('<span class="fas fa-trash"></span>', ['/product-img/delete', 'id' => $urlid[1], 'product_id' => $model->id], ['data-method' => 'post', 'class' => 'speacial__img-delete']) ?>
+                </div>
 
-
-
-    <?= $form->field($model, 'keywords')->textarea(['rows' => 6]) ?>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
 
     <?= $form->field($model, 'description')->widget(CKEditor::className(), [
         'editorOptions' => [
@@ -41,6 +66,9 @@ use mihaildev\ckeditor\CKEditor;
             'inline' => false, //по умолчанию false
         ],
     ]); ?>
+
+
+    <?= $form->field($model, 'keywords')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

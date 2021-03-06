@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'class' => LinkPager::class,
         ],
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        // 'filterModel' => $searchModel,
         'columns' => [
             // ['class' => 'yii\grid\SerialColumn'],
             [

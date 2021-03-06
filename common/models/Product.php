@@ -18,9 +18,11 @@ use yii\helpers\Html;
  * @property Category $category
  * @property ProductImg[] $productImgs
  * @property ImgsUrl[] $imgsurl
+ * @property FormImgsUrl[] $formimgsurl
  */
 class Product extends \yii\db\ActiveRecord
 {
+    public $images;
     /**
      * {@inheritdoc}
      */
@@ -39,6 +41,7 @@ class Product extends \yii\db\ActiveRecord
             [['category_id', 'status'], 'integer'],
             [['description', 'keywords'], 'string'],
             [['name'], 'string', 'max' => 255],
+            [['images'], 'safe'],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],
         ];
     }
@@ -55,6 +58,7 @@ class Product extends \yii\db\ActiveRecord
             'description' => 'İnfo',
             'keywords' => 'Keywords',
             'status' => 'Status',
+            'images' => 'Fotolar',
         ];
     }
 
@@ -112,6 +116,19 @@ class Product extends \yii\db\ActiveRecord
         }
         foreach ($this->productImgs as $img) {
             array_push($all,  Yii::$app->params['frontendUrl'] . '/storage/products/' . $img['image']);
+        }
+        return $all;
+    }
+
+    public function getFormImgsUrl()
+    {
+        $all = [];
+
+        if (!$this->productImgs) {
+            array_push($all, Yii::$app->params['frontendUrl'] . '/img/no-image.png');
+        }
+        foreach ($this->productImgs as $img) {
+            array_push($all,  [Yii::$app->params['frontendUrl'] . '/storage/products/' . $img['image'], $img->id]);
         }
         return $all;
     }

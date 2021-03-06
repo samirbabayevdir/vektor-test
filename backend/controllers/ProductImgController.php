@@ -105,8 +105,9 @@ class ProductImgController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
+        $product_id = Yii::$app->request->get('product_id');
 
-        return $this->redirect(['/product/multiple']);
+        return $this->redirect(['/product/update?id=' . $product_id]);
     }
 
     /**
