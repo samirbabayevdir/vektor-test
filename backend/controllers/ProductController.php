@@ -146,9 +146,11 @@ class ProductController extends BackController
                         $image->saveAs($fullPath . $img_model->image);
                         $imgPath = $fullPath . $img_model->image;
 
+                        $size = Image::getImagine()->open($imgPath)->getSize();
                         $img = Image::getImagine()->open($imgPath);
+
                         $ratio = 1 / 1;
-                        $width = 200;
+                        $width = $size->getWidth();
                         $height = round($width / $ratio);
                         $box = new Box($width, $height);
                         $img->resize($box)->save($imgPath);
@@ -193,9 +195,11 @@ class ProductController extends BackController
                         $image->saveAs($fullPath . $img_model->image);
                         $imgPath = $fullPath . $img_model->image;
 
+                        $size = Image::getImagine()->open($imgPath)->getSize();
                         $img = Image::getImagine()->open($imgPath);
+
                         $ratio = 1 / 1;
-                        $width = 200;
+                        $width = $size->getWidth();
                         $height = round($width / $ratio);
                         $box = new Box($width, $height);
                         $img->resize($box)->save($imgPath);
@@ -220,6 +224,17 @@ class ProductController extends BackController
      */
     public function actionDelete($id)
     {
+
+
+        $img_models = ProductImg::find()->andWhere(['product_id' => $id])->all();
+        $fullPath = Yii::getAlias('@frontend/web/storage/products/');
+
+        foreach ($img_models as $ms) {
+
+            $imgPath = $fullPath . $ms->image;
+            unlink($imgPath);
+            $ms->delete();
+        }
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

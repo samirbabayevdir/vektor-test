@@ -104,7 +104,12 @@ class ProductImgController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $fullPath = Yii::getAlias('@frontend/web/storage/products/');
+        $imgPath = $fullPath . $model->image;
+        unlink($imgPath);
+        $model->delete();
+
         $product_id = Yii::$app->request->get('product_id');
 
         return $this->redirect(['/product/update?id=' . $product_id]);
