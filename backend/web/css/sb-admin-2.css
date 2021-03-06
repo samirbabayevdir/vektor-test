@@ -11700,6 +11700,9 @@ body.sidebar-toggled footer.sticky-footer {
 	position: relative;
   max-width: 250px;
 }
+.speacial__img img {
+	max-width: 200px;
+}
 .speacial__img-delete {
 	position: absolute;
 	top: 0;
