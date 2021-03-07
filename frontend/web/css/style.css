@@ -1638,6 +1638,7 @@ ul, li {
 .product__slider .slider-nav .item {
   margin: 0 5px;
   max-width: 150px;
+  max-height: 150px;
   cursor: pointer;
 }
 
