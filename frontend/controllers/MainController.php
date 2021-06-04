@@ -34,7 +34,7 @@ class MainController extends BaseController
     // $model = Ca::find()->all();
     $meta = MetaPages::find()->andWhere('name' == 'home')->one();
 
-    $this->setMeta($meta->title, $meta->description);
+    $this->setMeta(@$meta->title, @$meta->description);
     return $this->render('index', ['headCategs' => $headCategs, 'about' => $about]);
   }
 
