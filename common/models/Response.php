@@ -20,6 +20,8 @@ use Yii;
  */
 class Response extends \yii\db\ActiveRecord
 {
+    public $reCaptcha;
+
     public function behaviors()
     {
         return [
@@ -46,6 +48,7 @@ class Response extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator2::className()],
             [['created_at'], 'integer'],
             [['message'], 'string'],
             [['name', 'surname', 'email', 'phone'], 'string', 'max' => 255],

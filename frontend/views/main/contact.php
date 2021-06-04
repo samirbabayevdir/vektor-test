@@ -47,6 +47,10 @@ use yii\widgets\ActiveForm;
             <div class="input__inner">
               <?= $form->field($response, 'message')->textarea(['maxlength' => true, 'cols' => 30, 'rows' => 10, 'placeholder' => \Yii::t('samba', 'Offers, Products, Orders, Additional Information ...')]) ?>
             </div>
+            <?= $form->field($response, 'reCaptcha')->widget(
+              \himiklab\yii2\recaptcha\ReCaptcha2::className(),
+              []
+            ) ?>
             <div class="button__inner">
               <?= Html::submitButton(\Yii::t('samba', 'Send'), ['class' => 'btn__vk']) ?>
             </div>
