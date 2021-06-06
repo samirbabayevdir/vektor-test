@@ -22,6 +22,7 @@ return [
     ],
     'controllerNamespace' => 'frontend\controllers',
     'defaultRoute' => '/main/index',
+    'homeUrl' => '',
     'components' => [
         // 'assetManager' => [
         //     'basePath' => '@webroot/assets',

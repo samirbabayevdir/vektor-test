@@ -17,6 +17,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
+    'homeUrl' => '/backend',
     'components' => [
         // 'assetManager' => [
         //     'basePath' => '@webroot/assets',
@@ -60,7 +61,6 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'scriptUrl' => '/backend/index.php',
             // 'suffix' => '/',
             'rules' => [
                 // '' => 'category/index',
