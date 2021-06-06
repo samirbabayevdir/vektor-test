@@ -25,6 +25,7 @@ return [
         'request' => [
             'csrfParam' => '_csrf-backend',
             // 'baseUrl' => "/admin",
+            'baseUrl' => '/backend',
             // 'class' => 'common\components\Request',
             // 'web' => '/backend/web',
             // 'adminUrl' => '/admin'
@@ -59,6 +60,7 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'scriptUrl' => '/backend/index.php',
             // 'suffix' => '/',
             'rules' => [
                 // '' => 'category/index',

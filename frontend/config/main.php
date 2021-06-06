@@ -31,7 +31,7 @@ return [
             'csrfParam' => '_csrf-frontend',
             // 'class' => 'common\components\Request',
             // 'web' => '/frontend/web',
-            // 'baseUrl' => '',
+            'baseUrl' => '',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -68,6 +68,7 @@ return [
             ],
         ],
         'urlManager' => [
+            'scriptUrl' => '/index.php',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             // 'suffix' => '/',
