@@ -57,40 +57,22 @@ function topFunction() {
 //Slider
 
 
+//SLIDER SINGLE PRODUCT
 $('.slider-for').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: true,
-  fade: false,
+  fade: true,
   asNavFor: '.slider-nav',
-  prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
-  nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
+  nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button" style=""><i class="fas fa-arrow-right"></i></button>',
+  prevArrow: '<button class="slick-prev slick-arrow" aria-label="Next" type="button" style=""><i class="fas fa-arrow-left"></i></button>',
 });
 
-$('.slider-nav').on('init', function (event, slick) {
-  $('.slider-nav .slick-slide.slick-current').addClass('is-active');
-})
-  .slick({
-    asNavFor: '.slider-for',
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    dots: false,
-    focusOnSelect: true,
-    infinite: true,
-    arrows: false,
-  });
-
-
-$('.slider-for').on('afterChange', function (event, slick, currentSlide) {
-  $('.slider-nav').slick('slickGoTo', currentSlide);
-  var currrentNavSlideElem = '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
-  $('.slider-nav .slick-slide.is-active').removeClass('is-active');
-  $(currrentNavSlideElem).addClass('is-active');
-});
-
-$('.slider-nav').on('click', '.slick-slide', function (event) {
-  event.preventDefault();
-  var goToSingleSlide = $(this).data('slick-index');
-
-  $('.slider-for').slick('slickGoTo', goToSingleSlide);
+$('.slider-nav').slick({
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  asNavFor: '.slider-for',
+  centerMode: true,
+  focusOnSelect: true,
+  arrows: false,
 });

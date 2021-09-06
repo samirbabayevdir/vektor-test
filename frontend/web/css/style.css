@@ -1631,18 +1631,27 @@ ul, li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-left: 1px solid #0d0d0d30;
-  border-right: 1px solid #0d0d0d30;
+  margin-left: 68%;
 }
 
 .product__slider .slider-nav .item {
   margin: 0 5px;
   max-width: 150px;
-  max-height: 150px;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
   cursor: pointer;
 }
 
+.product__slider .slider-nav .item img {
+  width: 100%;
+  height: auto;
+}
+
 .product__slider .slider-nav .item:hover {
+  border: 2px solid #e10f21;
+}
+
+.product__slider .slider-nav .item.slick-current {
   border: 2px solid #e10f21;
 }
 

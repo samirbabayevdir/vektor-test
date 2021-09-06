@@ -32,16 +32,23 @@ $this->title = $product['name'];
     <div class="row">
       <div class="col-lg-6">
         <div class="product__slider">
-          <div class="slider-for">
-            <?php foreach ($product->imgsUrl as $img) : ?>
-              <img src="<?= $img ?>" alt="" class="item">
-            <?php endforeach; ?>
-          </div>
-          <div class="slider-nav">
-            <?php foreach ($product->imgsUrl as $img) : ?>
-              <img src=" <?= $img ?>" alt="" class="item">
-            <?php endforeach; ?>
-          </div>
+          <?php if (count($product->imgsUrl) == 1) : ?>
+            <?php $img = $product->imgsUrl[0]; ?>
+            <img src="<?= $img ?>" alt="<?= $product->name ?>" class="item">
+          <?php else : ?>
+            <div class="slider-for">
+              <?php foreach ($product->imgsUrl as $img) : ?>
+                <img src="<?= $img ?>" alt="<?= $product->name ?>" class="item">
+              <?php endforeach; ?>
+            </div>
+            <div class="slider-nav">
+              <?php foreach ($product->imgsUrl as $img) : ?>
+                <div class="item">
+                  <img src=" <?= $img ?>" alt="<?= $product->name ?>">
+                </div>
+              <?php endforeach; ?>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
       <div class="col-lg-6">
