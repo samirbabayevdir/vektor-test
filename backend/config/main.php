@@ -17,7 +17,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
-    // 'homeUrl' => '/backend', ?
+    'homeUrl' => '/backend',
     'components' => [
         // 'assetManager' => [
         //     'basePath' => '@webroot/assets',
@@ -26,7 +26,7 @@ return [
         'request' => [
             'csrfParam' => '_csrf-backend',
             // 'baseUrl' => "/admin",
-            // 'baseUrl' => '/backend', ?
+            'baseUrl' => '/backend',
             // 'class' => 'common\components\Request',
             // 'web' => '/backend/web',
             // 'adminUrl' => '/admin'
