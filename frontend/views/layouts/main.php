@@ -159,7 +159,7 @@ $linkedin = empty($this->params['linkedin'])  ? '' : $this->params['linkedin'];
                 document.write(year);
               }
               getYear();
-            </script> <?= Yii::t('samba', '| VEKTOR UNİFORMA | All Rights Reserved | Developed by') ?> <a href="https://www.behance.net/samirbabayevdir">SAM-BA</a>
+            </script> <?= Yii::t('samba', '| VEKTOR UNİFORMA | All Rights Reserved | Developed by') ?> <a href="https://www.behance.net/yuzminay">SAM-BA</a>
           </p>
         </div>
       </div>
