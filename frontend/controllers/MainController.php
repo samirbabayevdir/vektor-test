@@ -113,6 +113,10 @@ class MainController extends BaseController
   {
     $about = About::find()->all();
 
+    $meta = MetaPages::find()->andWhere('name' == 'about')->one();
+
+    $this->setMeta(@$meta->title, @$meta->description);
+
     return $this->render('about', ['about' => $about]);
   }
 
@@ -120,6 +124,10 @@ class MainController extends BaseController
   {
     $contact = Contact::find()->all();
     $about = About::find()->all();
+
+    $meta = MetaPages::find()->andWhere('name' == 'contact')->one();
+
+    $this->setMeta(@$meta->title, @$meta->description);
 
     $response = new Response();
 
