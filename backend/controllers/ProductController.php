@@ -69,7 +69,7 @@ class ProductController extends BackController
                         $height = round($width / $ratio);
 
                         $box = new Box($width, $height);
-                        $img->resize($box)->save($imgPath);
+                        // $img->resize($box)->save($imgPath);
                     }
                 }
                 return $this->redirect(['multiple']);
@@ -153,7 +153,7 @@ class ProductController extends BackController
                         $width = $size->getWidth();
                         $height = round($width / $ratio);
                         $box = new Box($width, $height);
-                        $img->resize($box)->save($imgPath);
+                        // $img->resize($box)->save($imgPath);
                     }
                 }
                 // return $this->redirect(['multiple']);
@@ -202,7 +202,7 @@ class ProductController extends BackController
                         $width = $size->getWidth();
                         $height = round($width / $ratio);
                         $box = new Box($width, $height);
-                        $img->resize($box)->save($imgPath);
+                        // $img->resize($box)->save($imgPath);
                     }
                 }
                 // return $this->redirect(['multiple']);
