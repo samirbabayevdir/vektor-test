@@ -61,7 +61,7 @@ class MainController extends BaseController
 
     if (!$childCategs) {
 
-      $products = Product::find()->andWhere(['category_id' => $id])->all();
+      $products = Product::find()->andWhere(['category_id' => $id])->orderBy(['id' => SORT_DESC])->all();
 
       return $this->render('products', [
         'headCateg' => $headCateg,
