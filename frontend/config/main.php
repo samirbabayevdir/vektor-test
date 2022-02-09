@@ -82,6 +82,7 @@ return [
                 'product/<id:\d+>/<headCateg:\d+>' => 'main/product',
                 'about' => 'main/about',
                 'contact' => 'main/contact',
+                'sitemap.xml' => 'sitemap/index',
             ],
         ],
     ],
